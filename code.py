@@ -28,14 +28,15 @@ while True:
         print("Button with pull-down was pressed")
         time.sleep(.3)    
 
-
-my_lsit = []
+#Change the list name for my comfortability 
+list1 = []
+game_seq = []
 
 def add_to_sequence(lsit):
     lsit.append(random.randint(0 , 3))
 
 def display_sequence(lsit):
-    p = " "
+  #The P was there to see if the buttons were working. 
     for x in lsit:
         if x == 0:
             p = "red"
@@ -49,15 +50,22 @@ def display_sequence(lsit):
         else:
             p = "Blue"
             print(p)
+
+colors = (1,2,3,4)
+def add(points):
+    list1.append(random.choice(colors))
+    points +=1
+    print(points)
+    return points
 while True:
     inp = input(" 1 : Add to Sequence "
                 "2 : Display Sequence "
                 "3 : Exit Program ")
     print("")
     if inp.lower() == "1":
-        add_to_sequence(my_lsit)
+        add_to_sequence(list1)
     elif inp.lower() == "2":
-        display_sequence(my_lsit)
+        display_sequence(list1)
     elif inp.lower() == "3":
         print("Bye")
         break
