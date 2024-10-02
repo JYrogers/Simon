@@ -7,12 +7,12 @@ white = DigitalInOut(board.D10)
 white.direction = Direction.INPUT
 bluebutn = DigitalInOut(board.D8)
 bluebutn.direction = Direction.INPUT
-greenbtn = DigitalInOut(board.D6)
-greenbtn.direction = Direction.INPUT
-yellowbtn = DigitalInOut(board.D9)
-yellowbtn.direction = Direction.INPUT
-redbtn = DigitalInOut(board.D7)
-redbtn.direction = Direction.INPUT
+greenbutn = DigitalInOut(board.D6)
+greenbutn.direction = Direction.INPUT
+yellowbutn = DigitalInOut(board.D9)
+yellowbutn.direction = Direction.INPUT
+redbutn = DigitalInOut(board.D7)
+redbutn.direction = Direction.INPUT
 
 red = DigitalInOut(board.D2)
 green = DigitalInOut(board.D4)
@@ -26,8 +26,8 @@ blue.direction = Direction.OUTPUT
 
 sequence = []
 score = 0
+#Initiliazing the variables/list
 
-# main / infinite loop
 
 def add_to_sequence(lsit):
     lsit.append(random.randint(0 , 3))
@@ -37,6 +37,26 @@ def add_to_sequence(lsit):
 
 
 def display_sequence():
+    #This function displays the sequence by using the LEDs
+    for color in sequence():
+        if color == 0:
+            red.value = not red.value
+            time.sleep(0.3)
+            red.value = not.red.value
+        elif color == 1:
+            green.value = not green.value
+            time.sleep(0.3)
+            green.value = not green.value
+        elif color == 2:
+            yellow.value = not yellow.value
+            time.sleep(0.3)
+            yellow.value = not yellow.value
+        elif color == 3:
+            blue.value = not blue.value
+            time.sleep(0.3)
+            blue.value = not blue.value
+        time.sleep(0.3)  # Delay between colors
+
 
 colors = (1,2,3,4)
 def add(points):
