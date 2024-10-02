@@ -5,8 +5,8 @@ from digitalio import DigitalInOut, Direction
 
 white = DigitalInOut(board.D10)
 white.direction = Direction.INPUT
-bluebtn = DigitalInOut(board.D8)
-bluebtn.direction = Direction.INPUT
+bluebutn = DigitalInOut(board.D8)
+bluebutn.direction = Direction.INPUT
 greenbtn = DigitalInOut(board.D6)
 greenbtn.direction = Direction.INPUT
 yellowbtn = DigitalInOut(board.D9)
