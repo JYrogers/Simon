@@ -57,24 +57,50 @@ def display_sequence():
             blue.value = not blue.value
         time.sleep(0.3)  # Delay between colors
 
+def player_input():
+    #Function that captures the player's inputs and sees if it matches the sequence
+    seq = []
+    for i in range(len(sequence)):
+        right = False:
+        while not right: 
+                if redbutn.value:
+                    seq.append(0)
+                    red.value = not red.value
+                    time.sleep(0.5)
+                    red.value = not red.value
+                    correct = True
+            elif greenbutn.value:
+                    seq.append(1)
+                    green.value = not green.value
+                    time.sleep(0.5)
+                    green.value = not green.value
+                    correct = True
+            elif yellowbutn.value:
+                    seq.append(2)
+                    yellow.value = not yellow.value
+                    time.sleep(0.5)
+                    yellow.value = not yellow.value
+                    correct = True
+            elif bluebutn.value:
+                    seq.append(3)
+                    blue.value = not blue.value
+                    time.sleep(0.5)
+                    blue.value = not blue.value
+                    correct = True
+            time.sleep(0.1)  
+    return seq
 
-colors = (1,2,3,4)
-def add(points):
-    list1.append(random.choice(colors))
-    points +=1
-    print(points)
-    return points
-while True:
-    inp = input(" 1 : Add to Sequence "
-                "2 : Display Sequence "
-                "3 : Exit Program ")
-    print("")
-    if inp.lower() == "1":
-        add_to_sequence(list1)
-    elif inp.lower() == "2":
-        display_sequence(list1)
-    elif inp.lower() == "3":
-        print("Bye")
-        break
-    else:
-        print("Invalid Input")
+
+def startgame():
+    global score
+    while True:
+        print('Press the white button to begin')
+        red.value = green.value = yellow.value = blue.value = True
+        time.sleep(0.5)
+        red.value = green.value = yellow.value = blue.value = False
+        tiome.sleep(0.5)
+        while not white.value:
+            time.sleep(0.1)
+
+score = 0
+seqeunce.clear()
