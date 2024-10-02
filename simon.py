@@ -92,6 +92,7 @@ def player_input():
 
 
 def startgame():
+    #Begins the game and adds the score
     global score
     while True:
         print('Press the white button to begin')
@@ -104,3 +105,23 @@ def startgame():
 
 score = 0
 seqeunce.clear()
+
+def game_over(score):
+    #Ends the game after the user fails
+    red.value = green.value = yellow.value = blue.value = True
+    time.sleep(0.5)
+    red.value = green.value = yellow.value = blue.value = False
+    time.sleep(0.5)
+    for i in range(score):
+        red value = not red.value
+        time.sleep(0.2)
+        red.value = not red.value
+        time.sleep(0.2)
+        sequence.clear()
+        game_start()
+
+startgame()
+game_over()
+
+
+
